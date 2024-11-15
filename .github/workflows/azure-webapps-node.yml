@@ -32,6 +32,8 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
+            # Login to Docker Registry on the remote server
+            echo "${{ secrets.ALI_REGISTRY_PASSWORD }}" | sudo docker login -u "${{ secrets.ALI_REGISTRY_USERNAME }}" --password-stdin ${{ secrets.ALI_REGISTRY_URL }}
             sudo docker pull ${{ secrets.ALI_REGISTRY_URL }}/image-editer-web:latest
             sudo docker stop image-editer || true
             sleep 3

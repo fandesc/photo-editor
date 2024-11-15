@@ -18,7 +18,7 @@ jobs:
         run: echo "${{ secrets.ALI_REGISTRY_PASSWORD }}" | docker login ${{ secrets.ALI_REGISTRY_URL }} -u ${{ secrets.ALI_REGISTRY_USERNAME }} --password-stdin
 
 
-      # Step 9: 构建并推送 Docker 镜像到 Docker Hub
+      # Step 9: 构建并推送 Docker 镜像到 Aliyun
       - name: Build and push Docker image
         run: |
          docker build -t ${{ secrets.ALI_REGISTRY_URL }}/image-editer-web:latest .

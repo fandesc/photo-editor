@@ -23,4 +23,4 @@ FROM nginx:alpine
 COPY --from=build-stage /app/dist /usr/share/nginx/html
 
 # 暴露8080端口
-EXPOSE 8080
+EXPOSE 80

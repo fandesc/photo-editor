@@ -22,5 +22,5 @@ FROM nginx:alpine
 # 将构建好的Vue应用复制到Nginx的默认网站目录中
 COPY --from=build-stage /app/dist /usr/share/nginx/html
 
-# 暴露80端口
-EXPOSE 80
+# 暴露8080端口
+EXPOSE 8080
